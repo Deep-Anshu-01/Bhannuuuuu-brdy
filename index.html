@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Bhannuuu Rani ❤️</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Georgia,serif;background:#160b15;color:#fff}body{overflow-x:hidden}.bg{position:fixed;inset:0;background:radial-gradient(circle at 20% 20%,#70284f 0,transparent 35%),radial-gradient(circle at 80% 70%,#4c214e 0,transparent 38%),linear-gradient(135deg,#180b18,#2a1028);z-index:-2}.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:-1}.heart{position:absolute;font-size:18px;animation:float 7s linear infinite;opacity:.65}@keyframes float{from{transform:translateY(110vh) rotate(0deg);opacity:0}15%{opacity:.7}to{transform:translateY(-15vh) rotate(360deg);opacity:0}}
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.card{width:min(92vw,560px);text-align:center;padding:42px 24px 34px;border:1px solid rgba(255,255,255,.18);border-radius:28px;background:rgba(255,255,255,.08);backdrop-filter:blur(12px);box-shadow:0 20px 60px rgba(0,0,0,.35)}.tiny{letter-spacing:3px;text-transform:uppercase;font-size:12px;color:#ffd7eb}.title{font-size:clamp(38px,10vw,64px);margin:12px 0 8px;color:#ffd9ec}.sub{font-size:18px;line-height:1.6;color:#f9dce9;margin:0 auto 28px;max-width:430px}.btn{border:0;border-radius:999px;padding:15px 30px;font-size:18px;font-family:inherit;background:#ff5f9e;color:white;box-shadow:0 10px 25px rgba(255,95,158,.3);cursor:pointer}.btn:active{transform:scale(.98)}
+#memory{display:none}.memory{width:min(94vw,760px);margin:auto;padding:22px 0 50px}.memory h1{text-align:center;color:#ffd9ec;font-size:36px;margin:12px 0 8px}.memory .intro{text-align:center;color:#f4cfe0;margin:0 0 24px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.photo{background:rgba(255,255,255,.08);padding:7px;border-radius:18px;box-shadow:0 10px 28px rgba(0,0,0,.25);cursor:pointer}.photo:first-child{grid-column:1/-1}.photo img{width:100%;display:block;border-radius:13px;max-height:520px;object-fit:cover}.back{display:block;margin:22px auto 0;background:transparent;border:1px solid rgba(255,255,255,.25);color:#ffe2ee}.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:20;align-items:center;justify-content:center;padding:20px}.lightbox.show{display:flex}.lightbox img{max-width:95vw;max-height:88vh;border-radius:14px}.close{position:fixed;right:18px;top:14px;font-size:34px;background:none;border:0;color:white;cursor:pointer}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.photo:first-child{grid-column:auto}.memory h1{font-size:30px}}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="hearts" id="hearts"></div>
+<section class="page" id="home"><div class="card"><div class="tiny">A little birthday memory</div><div class="title">Happy Birthday<br>Bhannuuu Rani ❤️</div><p class="sub">No apology today. Bas ek chhoti si memory… aur tumhare birthday ke liye ek dil se wish. ✨</p><button class="btn" onclick="openMemory()">Open your memory 💗</button></div></section>
+<section id="memory"><div class="memory"><h1>For you, Bhannuuu ❤️</h1><p class="intro">Some moments are too special to keep in the gallery. ✨</p><div class="grid">
+<div class="photo" onclick="zoom(this)"><img src="photos/01-baby.jpg" alt="Baby memory"></div>
+<div class="photo" onclick="zoom(this)"><img src="photos/02.jpg" alt="Memory 2"></div>
+<div class="photo" onclick="zoom(this)"><img src="photos/03.jpg" alt="Memory 3"></div>
+<div class="photo" onclick="zoom(this)"><img src="photos/04.jpg" alt="Memory 4"></div>
+<div class="photo" onclick="zoom(this)"><img src="photos/05.jpg" alt="Memory 5"></div>
+<div class="photo" onclick="zoom(this)"><img src="photos/06.png" alt="Memory 6"></div>
+</div><button class="btn back" onclick="goHome()">← Back</button></div></section>
+<div class="lightbox" id="lightbox" onclick="closeZoom(event)"><button class="close" onclick="closeZoom(event)">×</button><img id="zoomImg" src="" alt="Expanded memory"></div>
+<script>
+function openMemory(){document.getElementById('home').style.display='none';document.getElementById('memory').style.display='block';window.scrollTo(0,0)}
+function goHome(){document.getElementById('memory').style.display='none';document.getElementById('home').style.display='flex';window.scrollTo(0,0)}
+function zoom(el){document.getElementById('zoomImg').src=el.querySelector('img').src;document.getElementById('lightbox').classList.add('show')}
+function closeZoom(e){if(e.target.id==='lightbox'||e.target.className==='close')document.getElementById('lightbox').classList.remove('show')}
+for(let i=0;i<18;i++){let h=document.createElement('span');h.className='heart';h.textContent=['♥','❤','✦','♡'][i%4];h.style.left=Math.random()*100+'%';h.style.animationDelay=(-Math.random()*7)+'s';h.style.fontSize=(12+Math.random()*18)+'px';document.getElementById('hearts').appendChild(h)}
+</script>
+</body></html>
